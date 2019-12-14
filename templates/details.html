@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <br>
+    <div class="container" style="background-color: #717792;">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 style="text-align: center ;color: #f7abd5;">Black Friday Sale</h4>
+                <div class="col-md-3">
+                    {% if register %}
+                    <div class="panel panel-default" style="background-color: #e2e5ff;">
+                        <div class="panel-heading text-center"
+                            style="color: darkgreen; font-weight: 700; font-size: 18px;">
+                            {{register[1]}} {{register[2]}}, {{register[5]}}
+                        </div>
+                        {% if cart %}
+                        <div class="panel panel-body" style="background-color: #e2e5ff; display: inline-flex;">
+                            <p class="text-center title" style="font-weight: 700;color: #57aca0;font-size: 18px;">
+                                Item Added : {{cart | length}}</p>
+                            <div class="col-md-4">
+                                <form action="/cart/buy" method="get">
+                                    <input type="submit" name="submit" class="btn btn-primary btn-sm" value="Purchase">
+                                </form>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    <div class="panel panel-body" style="background-color: #e2e5ff;">
+                        <h2>Categories</h2>
+                        <ul class="list-group">
+                            {% for category in categoryList %}
+                            <a href="/dashboard/{{category['category']}}">
+                                <li class="list-group-item" style="font-weight: 600;">{{category['category']}}</li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    {% if product %}
+                    <div class="col-md-12">
+                        <div class="panel panel-body" style="background-color: #e2e5ff;">
+                            <div class="col-md-6">
+                                <img src="{{ product['img'] }} " alt="" srcset="" width="300px">
+                                <div style="font-size: 13px;font-weight: 500; color: #cc13a4;">
+                                    {{product['brand']}}
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="display: inline-block;">
+                                <p class="title" style="font-weight: 600;color: #fa8072;font-size: 30px;">
+                                    {{product['title']}}</p>
+
+                            </div>
+                            <div class="col-md-4" style="display: inline-block;">
+                                <div class="col-md-12">
+                                    <p class="title" style="font-weight: 700;color: #2b48c9;font-size: 20px;">
+                                        {{product['price']}}</p>
+                                    <p style="text-decoration: line-through;font-size: 20px;color: #5f9ea0;">
+                                        {{product['deal-price']}}</p>
+                                </div>
+                                <div class="col-md-12">
+                                    <form action="/add/cart/" method="post">
+                                        <input type="submit" name="submit" class="btn btn-info btn-md" value="Add Cart">
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

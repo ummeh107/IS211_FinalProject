@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <br>
+    <div class="container" style="background-color: #717792;">
+        <div class="row">
+            <h4 style="text-align: center ;color: #f7abd5;">Black Friday Product</h4>
+            <div class="col-md-12">
+                <div class="panel panel-default" style="background-color: #e2e5ff;">
+                    <div class="panel-heading text-center">Registration</div>
+                    <div class="panel-body" style="background-color: #e2e5ff;">
+                        <div class="col-md-12">
+                            <form class="form" action="/registration" method="post">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>First name </label>
+                                        <input type="text" class="form-control" placeholder="" name="first">
+                                    </div> <!-- form-group end.// -->
+                                    <div class="form-group col-md-6">
+                                        <label>Last name</label>
+                                        <input type="text" class="form-control" placeholder=" " name="last">
+                                    </div> <!-- form-group end.// -->
+                                </div> <!-- form-row end.// -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label>Email address</label>
+                                        <input type="email" class="form-control" placeholder="" name="email">
+                                    </div>
+                                </div> <!-- form-group end.// -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label class="form-check form-check-inline">
+                                            <input class="form-check-input" checked type="radio" name="gender"
+                                                value="option1">
+                                            <span class="form-check-label"> Male </span>
+                                        </label>
+                                        <label class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" value="option2">
+                                            <span class="form-check-label"> Female</span>
+                                        </label>
+                                    </div>
+                                </div><!-- form-group end.// -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>City</label>
+                                        <select id="inputState" class="form-control" name="city">
+                                            <option selected="">Select City</option>
+                                            <option>New York</option>
+                                            <option>Cary</option>
+                                            <option>Charlotte</option>
+                                            <option>Durham</option>
+                                        </select>
+                                    </div> <!-- form-group end.// -->
+                                    <div class="form-group col-md-6">
+                                        <label>Country</label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected="">United States</option>
+                                        </select>
+                                    </div> <!-- form-group end.// -->
+                                </div> <!-- form-row.// -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label>Create password</label>
+                                        <input class="form-control" type="password" name="password">
+                                    </div> <!-- form-group end.// -->
+                                    <div class="form-group col-md-12">
+                                        {% if error %}
+                                        <h4 style="color: brown;">{{error}}</h4>
+                                        {% endif %}
+                                        <button type="submit" class="btn btn-primary btn-block"> Register </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

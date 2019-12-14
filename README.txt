@@ -1,0 +1,5 @@
+This web application I developed using Python v3.8 along with Flask, HTML, CSS, SQlite3 database and beautifulsoup4 for web scraping to data collection of my application. I name d it Black Friday Sale. It will show the sorted item by Category with price and other details.
+Mainly I collect or scraping the e-commerce site which was https://blackfriday.com. On this application user needs to register with user profile data model like user First name, Last name, City, email id and password. After one time registration, they can login any time using their email id and password. They select their items they want to buy sorted by category. They can view the item also with price. They can add multiple items if they want to purchase.
+When you download the project and run eapp.py then browse to localhost: 5001/dashboard. In the login portionemail:jsmith@gmail.com and password: 123456. I did not added here the payment option because of time deficiency. Without any internet connectivity this application will not execute. Because I am collecting data using web scrap. 
+I believe I included all requirements. Please check and let me know if you have any query.
+
